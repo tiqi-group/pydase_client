@@ -3,6 +3,18 @@
 This package is a slim client for `pydase` services, providing you with both synchronous
 and asynchronous clients.
 
+## Installation
+
+You can install this package using `pip` or `poetry`:
+
+```bash
+pip install git+https://github.com/tiqi-group/pydase_client.git
+```
+
+```bash
+poetry add git+https://github.com/tiqi-group/pydase_client.git
+```
+
 ## Synchronous
 ```python
 import pydase_client
