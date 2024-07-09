@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "foo",
+            "type": "python",
+            "request": "launch",
+            "module": "foo",
+            "justMyCode": false,
+            "env": {
+                "ENVIRONMENT": "development"
+            }
+        }
+    ]
+}
