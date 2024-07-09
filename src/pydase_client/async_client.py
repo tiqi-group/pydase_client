@@ -81,3 +81,24 @@ class AsyncClient:
                 "value": dump(new_value),
             },
         )
+
+    async def trigger_method(
+        self,
+        full_access_path: str,
+        *,
+        args: tuple[Any] = (),  # type: ignore
+        kwargs: dict[str, Any] = {},
+    ) -> Any:
+        result = await self._sio.call(
+            "trigger_method",
+            {
+                "access_path": full_access_path,
+                "args": dump(list(args)),
+                "kwargs": dump(kwargs),
+            },
+        )
+
+        if result is not None:
+            return loads(serialized_object=result)
+
+        return None

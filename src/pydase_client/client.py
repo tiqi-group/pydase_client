@@ -81,3 +81,24 @@ class Client:
                 "value": dump(new_value),
             },
         )
+
+    def trigger_method(
+        self,
+        full_access_path: str,
+        *,
+        args: tuple[Any] = (),  # type: ignore
+        kwargs: dict[str, Any] = {},
+    ) -> Any:
+        result = self._sio.call(
+            "trigger_method",
+            {
+                "access_path": full_access_path,
+                "args": dump(list(args)),
+                "kwargs": dump(kwargs),
+            },
+        )
+
+        if result is not None:
+            return loads(serialized_object=result)
+
+        return None
