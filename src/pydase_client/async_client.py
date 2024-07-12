@@ -17,7 +17,6 @@ from pydase_client.serialization.serializer import dump
 if TYPE_CHECKING:
     from pydase_client.serialization.types import SerializedObject
 
-logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
